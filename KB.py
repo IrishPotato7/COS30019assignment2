@@ -1,6 +1,9 @@
 def readKB(filename):
     with open(filename) as file:
         for line in file:
-            print(line)
-
-readKB('test.txt')
+            line = line.strip()
+            if line == "TELL":
+                line = file.readline().strip().replace(" ", "")
+                kb = line.split(";")
+                kb = list(filter(None, kb))
+                print(kb)
