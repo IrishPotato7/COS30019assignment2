@@ -6,4 +6,7 @@ def readKB(filename):
                 line = file.readline().strip().replace(" ", "")
                 kb = line.split(";")
                 kb = list(filter(None, kb))
-                print(kb)
+            elif line == "ASK":
+                line = file.readline()
+                query = line.strip()
+    return kb, query
