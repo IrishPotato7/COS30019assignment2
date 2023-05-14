@@ -26,6 +26,7 @@ def createTT(kb):
             tt[statements[i]].append(value)
             i += 1
 
+    # Add the arguments to the truth table and evaluate them
     for argument in kb:
         if "=>" in argument:
             tt[argument] = []
@@ -40,6 +41,7 @@ def createTT(kb):
                         argumentvalue = 0
                 tt[argument].append(argumentvalue)
 
+    # Add the kb to the truth table and evaluate it
     finalstatement = "^".join(kb)
     tt[finalstatement] = []
     for i in range(len(ttvalues)):
@@ -69,7 +71,6 @@ def askTT(tt, query):
 
     print("YES:", count)
     return
-
 
 kb, query = KB.readKB("test.txt")
 tt = createTT(kb)
