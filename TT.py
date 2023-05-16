@@ -16,22 +16,21 @@ def createTT(kb):
 
     # Generate an array of values to input into the truth table
     ttvalues = list(itertools.product([0, 1], repeat=len(statements)))
+    size = range(len(ttvalues))
 
     # Add the statements with the associated values to the truth table
     for statement in statements:
         tt[statement] = []
     for values in ttvalues:
-        i = 0
-        for value in values:
+        for i, value in enumerate(values):
             tt[statements[i]].append(value)
-            i += 1
 
     # Add the arguments to the truth table and evaluate them
     for argument in kb:
         if "=>" in argument:
             tt[argument] = []
             argumentparams = re.split("&|=>", argument)
-            for i in range(len(ttvalues)):
+            for i in size:
                 argumentvalue = 1
                 if tt[argumentparams[-1]][i] == 0:
                     argumentsvalues = []
@@ -44,7 +43,7 @@ def createTT(kb):
     # Add the kb to the truth table and evaluate it
     finalstatement = "^".join(kb)
     tt[finalstatement] = []
-    for i in range(len(ttvalues)):
+    for i in size:
         argumentvalue = 1
         for argument in kb:
             if tt[argument][i] == 0:
@@ -61,15 +60,15 @@ def askTT(tt, query):
     # Check if the query is true when the kb is true
     # If the kb is true and the query is not true the function returns
     # If both are true, counts how many times both are true
-    for i in range(len(tt[kb])):
-        if tt[kb][i] == 1:
+    for i, value in enumerate(tt[kb]):
+        if value == 1:
             if tt[query][i] == 0:
                 print("NO")
                 return
             else:
                 count += 1
 
-    print("YES:", count)
+    print(f"YES: {count}")
     return
 
 kb, query = KB.readKB("test.txt")
