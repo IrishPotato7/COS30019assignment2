@@ -71,6 +71,6 @@ def askTT(tt, query):
     print(f"YES: {count}")
     return
 
-kb, query = KB.readKB("test.txt")
-tt = createTT(kb)
-askTT(tt, query)
+#kb, query = KB.readKB("test.txt")
+#tt = createTT(kb)
+#askTT(tt, query)
