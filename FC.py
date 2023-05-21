@@ -24,7 +24,6 @@ def TruthValue(checkedTrue, queue, kb, query):
         return queue
     for argument in kb:
         argumentparams = re.split("&|=>", argument)
-        print("Queue",queue)
         if queue is False:
             return
         elif query in queue:
