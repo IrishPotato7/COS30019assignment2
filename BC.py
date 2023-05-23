@@ -29,5 +29,5 @@ def askBC(kb, query):
     else:
         print("NO")
 
-kb, query = KB.readKB("test.txt")
-result = askBC(kb, query)
+#kb, query = KB.readKB("test.txt")
+#result = askBC(kb, query)
