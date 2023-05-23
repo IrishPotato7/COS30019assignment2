@@ -1,5 +1,4 @@
 import re
-import KB
 
 def TruthValue(kb, query):
     if query in kb:
@@ -28,6 +27,3 @@ def askBC(kb, query):
         print(f"YES: {result}")
     else:
         print("NO")
-
-#kb, query = KB.readKB("test.txt")
-#result = askBC(kb, query)

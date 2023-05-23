@@ -1,8 +1,4 @@
-#The new FC
-
-
 import re
-import KB
 
 #Add values to the queue list based on the sentences that are known to be true
 def FirstRules(kb):
@@ -46,6 +42,3 @@ def askFC(kb, query):
         print(f"YES: {result}")
     else:
         print("NO")
-
-#kb, query = KB.readKB("test.txt")
-#result = askFC(kb, query)

@@ -1,6 +1,5 @@
 import re
 import itertools
-import KB
 
 # Create the truth table to analyse
 def createTT(kb):
@@ -53,8 +52,9 @@ def createTT(kb):
     return tt
 
 # Ask the truth table the query
-def askTT(tt, query):
+def askTT(kb, query):
     count = 0
+    tt = createTT(kb)
     kb = list(tt)[-1]
 
     # Check if the query is true when the kb is true
@@ -70,7 +70,3 @@ def askTT(tt, query):
 
     print(f"YES: {count}")
     return
-
-#kb, query = KB.readKB("test.txt")
-#tt = createTT(kb)
-#askTT(tt, query)

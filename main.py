@@ -8,7 +8,7 @@ def main():
     try:
         method = sys.argv[1]
         filename = sys.argv[2]
-    except:
+    except Exception:
         print("Invalid command, please enter the method ('TT', 'FC', or 'BC') followed by the file name")
         print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n")
 
@@ -16,8 +16,7 @@ def main():
     
     if method == "TT":#py main.py TT test.txt
         print("Truth table method runs")
-        tt = TT.createTT(kb)
-        TT.askTT(tt, query)
+        TT.askTT(kb, query)
     elif method == "FC":#py main.py FC test.txt
         print("Forward chaining method runs")
         FC.askFC(kb, query)
