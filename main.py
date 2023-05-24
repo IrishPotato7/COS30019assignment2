@@ -11,6 +11,7 @@ def main():
     except Exception:
         print("Invalid command, please enter the method ('TT', 'FC', or 'BC') followed by the file name")
         print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n")
+        return
 
     kb, query = KB.readKB(filename)
     
